@@ -1,0 +1,100 @@
+.adminUser-details-content {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(234, 236, 240);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-detail-content {
+  width: 40%;
+  height: 80%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user-details-log {
+  width: 100%;
+  height: 30%;
+  background-color: rgb(234, 236, 240);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-container {
+  width: 200px;
+  height: 200px;
+  border: 5px solid rgb(151, 154, 155);
+  /* background-color: green; */
+  border-radius: 50%;
+  overflow: hidden;
+}
+.logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.userDetails-form {
+  width: 100%;
+  height: 40%;
+  /* background-color: green; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.userDetails-form form {
+  margin-left: 30px;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.userDetails-form form input {
+  padding-left: 10px;
+  width: 400px;
+  height: 40px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.userDetails-form form label {
+  margin: 10px 0px;
+  color: rgb(151, 154, 155);
+}
+.user-detail-content hr {
+  width: 100%;
+}
+.admin-user-order-details {
+  width: 80%;
+  height: 30%;
+  /* background-color: brown; */
+}
+.admin-user-order-details span {
+  display: flex;
+  align-items: flex-start;
+  /* background-color: white; */
+}
+
+.user-order-list {
+  padding-top: 10px;
+  height: 60%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: rgb(250, 250, 250);
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding: 10px;
+}
+.user-order-list p {
+  font-size: 17px;
+  margin: 0;
+}
+.user-order-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: red; */
+}

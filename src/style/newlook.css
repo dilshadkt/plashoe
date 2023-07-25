@@ -1,0 +1,28 @@
+.newlook-container {
+  width: 100%;
+  height: 100%;
+}
+.look-head {
+  width: 100%;
+  height: 220px;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  font-weight: 500;
+}
+.newlook-image-container {
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.newlook-image {
+  width: 100%;
+  height: 100%;
+  /* background-color: green; */
+  margin: 0px 40px;
+}

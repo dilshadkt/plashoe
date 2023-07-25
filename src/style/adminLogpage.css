@@ -1,0 +1,82 @@
+.AdminLogPage-body {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(240, 240, 241);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.AdminLogPage-content {
+  width: 25%;
+  height: 60%;
+  /* background-color: forestgreen; */
+  /* border: 2px solid rgb(211, 211, 211); */
+}
+.AdminLogPage-logo {
+  width: 100%;
+  height: 30%;
+  background-color: rgb(240, 240, 241);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Adminlogin-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid lightgray;
+  /* background-color: white; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Adminlogin-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.AdminLogPage-form {
+  width: 100%;
+  height: 70%;
+  background-color: white;
+  display: flex;
+}
+.AdminLogPage-form form {
+  width: 100%;
+  margin: 20px;
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.AdminLogPage-form form input {
+  width: 98%;
+  height: 40px;
+  border: 1px solid lightgray;
+  border-radius: 7px;
+}
+.AdminLogPage-form form span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-top: 40px;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(54, 55, 64);
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.AdminLogPage-form form span:hover {
+  background-color: rgb(85, 85, 91);
+}
+.AdminLogPage-form form label {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  color: rgb(78, 73, 80);
+}

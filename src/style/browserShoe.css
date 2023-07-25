@@ -1,0 +1,226 @@
+.Brows-shoe-contianer {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(241, 241, 239);
+  display: flex;
+
+  justify-content: center;
+}
+.Brows-shoe-content {
+  width: 1200px;
+  height: 100%;
+  position: relative;
+  background-color: white;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+.Brows-shoe-body {
+  margin: 40px 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: green; */
+}
+.Brows-shoe-top {
+  width: 100%;
+  height: 100%;
+  /* background-color: yellow;   */
+  display: flex;
+  padding-bottom: 30px;
+}
+
+.Brows-shoe-body-top {
+  width: 50%;
+  height: 550px;
+  /* background-color: cyan; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Brows-shoe-body-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.browse-payment-content {
+  width: 100%;
+  height: 100%;
+  /* background-color: brown; */
+  margin: 42px;
+  text-align: left;
+  /* position: relative; */
+}
+.top-caption {
+  font-size: 18px;
+  /* background-color: yellow; */
+}
+.top-head {
+  margin-top: 20px;
+  /* background-color: yellow; */
+  font-weight: 500;
+  font-size: 30px;
+}
+.top-amount {
+  color: rgb(151, 154, 155);
+
+  margin-top: 20px;
+
+  font-size: 17px;
+}
+.top-amount span {
+  font-size: 25px;
+  font-weight: 500;
+}
+.browse-about-section {
+  /* background-color: yellow; */
+  color: rgb(151, 154, 155);
+  line-height: 2;
+  font-weight: 400;
+  font-size: 15px;
+}
+.shoe-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: yellow; */
+}
+.shoe-quantity-container {
+  width: 130px;
+  height: 30px;
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(173, 170, 170);
+  color: rgb(140, 136, 136);
+}
+.shoe-quantity-container div,
+button {
+  flex: 1;
+  height: 100%;
+
+  /* background-color: cyan; */
+}
+.shoe-quantity-container div {
+  font-size: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shoe-quantity-container button {
+  cursor: pointer;
+  /* background-color: red; */
+
+  font-size: 17px;
+  border: none;
+}
+.shoe-quantity-container hr {
+  transform: rotate(90deg);
+  height: 1px;
+  background-color: cyan;
+}
+.shoe-addcart-container {
+  cursor: pointer;
+  font-size: 15px;
+
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(110, 112, 81);
+
+  padding: 0px 20px;
+  margin-left: 25px;
+  /* padding: 10px 20px; */
+}
+.shoe-addcart-container button {
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  font-weight: 500;
+}
+.browse-payment-content > hr {
+  margin-top: 18px;
+  width: 100%;
+}
+.shoe-categories {
+  margin-top: 10px;
+  color: rgb(110, 112, 81);
+  font-weight: 300;
+  /* background-color: yellow; */
+}
+.shoe-browser-payment-card {
+  width: 100%;
+  height: 100px;
+  /* background-color: green; */
+  margin-top: 35px;
+  border: 1px solid rgb(221, 221, 221);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.garanteed-text {
+  font-weight: 600;
+  padding: 0px 10px;
+  background-color: white;
+  position: absolute;
+  top: 450px;
+  color: rgb(151, 154, 155);
+}
+.sale-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgb(110, 112, 81);
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  left: 35px;
+}
+/* ///////////////////// review section //////////////// */
+.review-section hr {
+  width: 100%;
+
+  margin: 0;
+}
+.review-section {
+  margin-top: 50px;
+}
+.review-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 250px;
+  height: 40px;
+}
+.review-btn button {
+  padding-top: 10px;
+  border: none;
+  margin-right: 10px;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 17px;
+  color: rgb(90, 89, 95);
+}
+.brows-related-shoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.related-prdct-head {
+  display: flex;
+  /* background-color: red; */
+  font-size: 35px;
+  font-weight: 500;
+  margin-top: 30px;
+}

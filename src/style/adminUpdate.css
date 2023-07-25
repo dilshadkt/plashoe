@@ -1,0 +1,101 @@
+.admine-update {
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.admine-update-content {
+  margin-top: 50px;
+  width: 90%;
+  height: 80%;
+  /* background-color: rgb(234, 236, 240); */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.admine-update-parts {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  /* background-color: red; */
+}
+.admine-update-parts img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+.admine-update-parts form {
+  padding-top: 50px;
+  width: 100%;
+  height: 80%;
+  /* border: 1px solid lightgray; */
+  border-radius: 30px;
+  /* background-color: white; */
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.admine-update-parts label {
+  margin: 10px 0px;
+  font-weight: 500;
+  color: rgb(151, 154, 155);
+}
+.admine-update-parts input {
+  width: 60%;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding-left: 20px;
+  font-size: 14px;
+}
+.admine-update-parts select {
+  width: 65%;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding-left: 20px;
+  font-size: 14px;
+}
+.admine-update-parts form {
+  position: relative;
+}
+.edit-icon {
+  z-index: 15;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.edit-icon:hover {
+  transform: scale(1.1);
+}
+.form-active {
+  /* border: 1px solid red; */
+  background-color: rgb(225, 225, 206);
+}
+.confirm-btn {
+  width: 65%;
+  height: 40px;
+  color: white;
+  border-radius: 10px;
+  background-color: rgb(84, 85, 91);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+}

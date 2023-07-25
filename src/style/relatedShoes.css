@@ -1,0 +1,14 @@
+.related-card-Container {
+  width: 345px;
+  height: 500px;
+  margin-top: 24px;
+}
+.shop-card-top {
+  overflow: hidden;
+}
+.shop-card-top:hover img {
+  transform: scale(1.1);
+}
+.shop-card-top img {
+  transition: all 1s ease;
+}

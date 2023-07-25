@@ -1,0 +1,118 @@
+.nav-container {
+  width: 100%;
+  position: relative;
+  /* background-color: red; */
+}
+.top-nav {
+  height: 35px;
+  background-color: rgb(241, 241, 239);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 400;
+  color: rgb(174, 154, 155);
+}
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0px 35px;
+  height: 85px;
+}
+.bottom-nav a {
+  text-decoration: none;
+  color: inherit;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+.nav-items {
+  display: flex;
+  list-style: none;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+.nav-items li {
+  margin-left: 20px;
+  cursor: pointer;
+  color: rgb(151, 154, 155);
+}
+.nav-items li:hover {
+  color: black;
+}
+.nav-logo {
+  font-size: 22px;
+}
+.nav-logo > p {
+  letter-spacing: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right div {
+  margin: 0px 20px;
+  cursor: pointer;
+}
+.nav-cart-cout-shower {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  top: 0;
+  right: 10;
+}
+.nav-right {
+  position: relative;
+}
+/* //////////////////////// user log details ////////////// */
+
+.user-log-details {
+  color: rgb(151, 154, 155);
+  z-index: 15;
+  right: 0;
+  position: absolute;
+  width: 250px;
+  height: 100px;
+  background-color: rgb(255, 255, 252);
+  border: 1px solid rgb(185, 180, 180);
+  opacity: 0;
+  transition: all 0.4s ease;
+  font-weight: 500;
+}
+.user-log-active {
+  opacity: 1;
+}
+
+.user-log-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.user-log-btn-icon:hover {
+  color: black;
+}
+.user-log-out-btn {
+  /* background-color: yellow; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-log-details div {
+  height: 50%;
+}
+.user-log-details :first-child {
+  /* background-color: green; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

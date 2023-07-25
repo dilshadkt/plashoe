@@ -1,0 +1,56 @@
+.shop-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shop-content {
+  width: 100%;
+  height: 100%;
+  margin: 50px 150px;
+  /* background-color: yellow; */
+}
+.shop-header {
+  width: 100%;
+  height: 70px;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.shop-header h5 {
+  font-weight: 500;
+  font-size: 21px;
+}
+.vewAll span {
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+.vewAll {
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+  /* background-color: yellow; */
+  align-items: center;
+  justify-content: center;
+}
+.view-line {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(246, 170, 40);
+}
+.shop-cards {
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  /* background-color: green; */
+  display: flex;
+
+  align-items: flex-start;
+}
+.shop-card-item {
+  margin: 10px;
+}

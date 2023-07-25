@@ -1,0 +1,65 @@
+.look-image-content {
+  width: 100%;
+  height: 600px;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.look-image-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.look-image-captions {
+  width: 100%;
+  height: 270px;
+  /* background-color: green; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.look-image-captions-content {
+  margin: 250px;
+  width: 100%;
+  height: 190px;
+  /* background-color: yellow; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.look-image-captions-content-left {
+  height: 100%;
+  flex: 1;
+  /* background-color: red; */
+  margin-right: 10px;
+  display: flex;
+  font-size: 40px;
+  font-weight: 500;
+}
+.look-image-captions-content-right {
+  text-align: left;
+  height: 100%;
+  flex: 1;
+  /* background-color: red; */
+  margin-right: 10px;
+  line-height: 2;
+  font-size: 17px;
+  color: rgb(151, 154, 155);
+}
+.caption-btn {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+}
+.caption-btn button {
+  background-color: transparent;
+  border: none;
+  font-weight: 500;
+}
+.caption-btn hr {
+  height: 2px;
+  background-color: orange;
+  border: none;
+}

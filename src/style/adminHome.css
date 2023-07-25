@@ -1,0 +1,158 @@
+.admin-home-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(234, 236, 240);
+  display: flex;
+  font-family: "Niramit";
+}
+.admin-home-left {
+  height: 150vh;
+  width: 250px;
+  background-color: rgb(54, 55, 64);
+}
+.admin-home-right {
+  width: inherit;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+}
+.admin-nav {
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.admin-nav span {
+  font-size: 30px;
+}
+.admin-search-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* background-color: yellow; */
+  height: 15%;
+}
+.admin-search-body input {
+  width: 60%;
+  height: 40px;
+  border-radius: 15px;
+  border: 1px solid rgb(179, 175, 175);
+  padding-left: 30px;
+  font-weight: 500;
+  font-size: 17px;
+}
+.admin-users-content {
+  height: 560px;
+  background-color: white;
+  margin: 0px 60px;
+  margin-bottom: 50px;
+}
+.admin-users-content a {
+  text-decoration: none;
+  /* margin: 0;
+  padding: 0; */
+}
+
+.admine-user-details {
+  width: 100%;
+  height: 80px;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.admine-user-details:hover {
+  background-color: rgb(237, 234, 234);
+}
+.admine-user-box {
+  margin: 0px 40px;
+  width: 100%;
+  height: 70%;
+  /* background-color: yellow; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-box {
+  width: 50%;
+  /* background-color: green; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.user-box-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.user-box-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.user-box-details {
+  width: 100%;
+  height: 100%;
+  /* background-color: blue; */
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.user-box-details p {
+  margin: 0;
+  color: rgb(140, 148, 163);
+}
+.userbox-right {
+  justify-content: flex-end;
+}
+.userbox-right span {
+  margin-right: 70px;
+  cursor: pointer;
+}
+.admin-users-content hr {
+  width: 100%;
+  margin: 0;
+}
+.admin-home-left h3 {
+  color: white;
+  /* background-color: green; */
+  font-size: 35px;
+  font-weight: 500;
+  padding: 30px 0px;
+  margin: 0;
+}
+.admin-left-nav {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(54, 55, 64);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(226, 224, 224);
+}
+.admin-left-nav span {
+  font-size: 15px;
+}
+.admin-left-nav:hover {
+  background-color: rgb(63, 64, 73);
+}
+.left-nav-content {
+  display: flex;
+  align-items: center;
+}
+.nav-content-left {
+  padding-left: 20px;
+}
+.nav-content-left span {
+  margin-left: 10px;
+}

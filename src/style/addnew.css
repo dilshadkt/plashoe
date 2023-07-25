@@ -1,0 +1,89 @@
+.addnew-contianer {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(234, 236, 240);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addnew-content {
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.addnew-parts {
+  width: 50%;
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addnew-img {
+  border: 1px dotted lightgray;
+  width: 70%;
+  height: 70%;
+  cursor: pointer;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+.addnew-form {
+  width: 70%;
+  height: 70%;
+}
+.addnew-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(164, 154, 155);
+  font-weight: 500;
+}
+.addnew-form form {
+  height: 70%;
+  width: 70%;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.addnew-form label {
+  margin: 10px 0px;
+}
+.addnew-form input {
+  width: 70%;
+  height: 40px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.addnew-form select {
+  width: 70%;
+  height: 40px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.addnew-form span {
+  cursor: pointer;
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 400;
+  background-color: rgb(54, 55, 64);
+  border-radius: 30px;
+  margin-top: 30px;
+}
+.addnew-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
