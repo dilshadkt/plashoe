@@ -70,7 +70,7 @@ const HomeContainer = () => {
           </div>
         </div>
       </div>
-      <hr />
+      <hr className="banner-section-hr" />
       {/* ////////////////////// about section ////////////// */}
       <div className="about-section">
         <div className="about-container">
@@ -84,16 +84,12 @@ const HomeContainer = () => {
             <div className="right-content">
               <h4>ABOUT US</h4>
               <h2>
-                Selected materials
-                <br />
-                designed for comfort <br />
-                and sustainability
+                Selected materials designed for comfort and sustainability
               </h2>
               <p>
-                Nullam auctor faucibus ridiculus dignissim sed et
-                <br /> auctor sed eget auctor nec sed elit nunc, magna non
-                <br /> urna amet ac neque ut quam enim pretium risus
-                <br /> gravida ullamcorper adipiscing at ut magna.
+                Nullam auctor faucibus ridiculus dignissim sed et auctor sed
+                eget auctor nec sed elit nunc, magna urna amet ac neque ut quam
+                enim pretium risus gravida ullamcorper adipiscing at ut magna.
               </p>
               <div className="readmore-btn">
                 <div>READ MORE</div>
@@ -131,18 +127,14 @@ const HomeContainer = () => {
                     <p>01.</p>
                     <h4>Pet canvas</h4>
                     <h5>
-                      Morbi eget bibendum sit <br />
-                      adipiscing morbi ac nisl vitae
-                      <br /> maecenas nulla cursus
+                      Morbi eget bibendum sit adipiscing morbi ac nisl vitae
+                      maecenas nulla cursus
                     </h5>
                   </div>
                   <div className="top-content left-align">
                     <p>03.</p>
                     <h4>Organic cotton</h4>
-                    <h5>
-                      A vel ipsum, sed dignissim <br />
-                      elementum ultrices amet
-                    </h5>
+                    <h5>A vel ipsum, sed dignissim elementum ultrices amet</h5>
                   </div>
                 </div>
                 <div className="horizontal">
@@ -152,27 +144,17 @@ const HomeContainer = () => {
                 <div className="bottom">
                   <div className="top-content ">
                     <p>02.</p>
-                    <h4>
-                      Algae foam +<br />
-                      vegan glue
-                    </h4>
+                    <h4>Algae foam + vegan glue</h4>
                     <h5>
-                      Enim tincidunt donec vulputate <br />
-                      magna pharetra mattis in
+                      Enim tincidunt donec vulputate magna pharetra mattis in
                     </h5>
                   </div>
                   <div className="top-content left-align">
                     <p>04.</p>
-                    <h4>
-                      Upcycled plastic <br />
-                      bottles
-                    </h4>
+                    <h4>Upcycled plastic bottles</h4>
                     <h5>
-                      Pellentesque viverra amet netus
-                      <br />
-                      facilisis amet felis odio tortor
-                      <br />
-                      orci cursus est
+                      Pellentesque viverra amet netus facilisis amet felis odio
+                      tortor orci cursus est
                     </h5>
                   </div>
                 </div>
@@ -189,11 +171,9 @@ const HomeContainer = () => {
           <div className="vsion-body">
             <div className="vsion-body-content-left">
               <p>
-                Eu eget felis erat mauris aliquam mattis lacus, arcu leo
-                <br /> aliquam sapien pulvinar laoreet vulputate sem aliquet
-                <br />
-                phasellus egestas felis, est, vulputate morbi massa
-                <br /> mauris vestibulum dui odio.
+                Eu eget felis erat mauris aliquam mattis lacus, arcu leo aliquam
+                sapien pulvinar laoreet vulputate sem aliquet phasellus egestas
+                felis, est, vulputate morbi massa mauris vestibulum dui odio.
               </p>
               <div className="vision-logos">
                 <img src="https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-badge-3.svg" />

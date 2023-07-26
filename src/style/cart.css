@@ -138,3 +138,8 @@
 .total-btn :last-child {
   margin-bottom: 25px;
 }
+@media screen and (max-width: 768px) {
+  .cart-section {
+    width: 100%;
+  }
+}

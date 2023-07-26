@@ -20,6 +20,7 @@
   height: 100%;
   /* background-color: black; */
   display: flex;
+
   align-items: center;
   justify-content: center;
   position: relative;
@@ -49,4 +50,19 @@
   border: 2px solid white;
   font-size: 17px;
   margin-top: 20px;
+}
+@media screen and (max-width: 768px) {
+  .home-card-container {
+    height: 100%;
+  }
+  .home-card-container-body {
+    flex-direction: column;
+    margin: 0;
+  }
+  .home-card-container-item {
+    width: 100%;
+  }
+  .home-card-container-content button {
+    padding: 15px 30px;
+  }
 }

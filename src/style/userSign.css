@@ -123,3 +123,14 @@
 .empty-active {
   left: -75%;
 }
+
+@media screen and (max-width: 768px) {
+  .userSign-content {
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 20px;
+  }
+  .userSignin-form form input {
+    height: 40px;
+  }
+}

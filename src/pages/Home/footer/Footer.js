@@ -33,12 +33,12 @@ function Footer() {
                 <HttpsIcon />
                 <span>Secure Payment</span>
               </div>
-              <hr />
+              <hr className="footer-section-hr" />
               <div className="footer-section-head-content-item">
                 <LocalShippingIcon />
                 <span>Express Shipping</span>
               </div>
-              <hr />
+              <hr className="footer-section-hr" />
               <div className="footer-section-head-content-item">
                 <AutorenewIcon />
                 <span>Free Return</span>

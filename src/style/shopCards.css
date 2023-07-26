@@ -55,3 +55,19 @@
 .shop-card-bottom span del {
   color: lightgray;
 }
+@media screen and (max-width: 768px) {
+  .shop-card-Container {
+    width: 160px;
+    height: 300px;
+  }
+  .shop-card-top {
+    height: 160px;
+    width: 100%;
+  }
+  .shop-card-bottom h4 {
+    font-size: 14px;
+  }
+  .shop-card-bottom {
+    height: 100px;
+  }
+}

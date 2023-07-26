@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import "../../../style/userSign.css";
 import { useNavigate } from "react-router-dom";
 import MyContext from "../../../components/Mycontext/Mycontext";
-import { Password } from "@mui/icons-material";
+
 function UserSignUp() {
   ////////////////// navigate /////////////
   const history = useNavigate();

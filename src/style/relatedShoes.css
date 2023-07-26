@@ -12,3 +12,9 @@
 .shop-card-top img {
   transition: all 1s ease;
 }
+@media screen and (max-width: 768px) {
+  .related-card-Container {
+    width: 160px;
+    height: 300px;
+  }
+}

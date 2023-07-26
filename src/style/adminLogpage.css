@@ -80,3 +80,9 @@
   margin-bottom: 10px;
   color: rgb(78, 73, 80);
 }
+@media screen and (max-width: 768px) {
+  .AdminLogPage-content {
+    width: 100%;
+    height: fit-content;
+  }
+}
