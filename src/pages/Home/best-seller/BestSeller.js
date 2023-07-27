@@ -4,7 +4,8 @@ import { shopcardData } from "../../../asset/data/shopCard/ShopData";
 import ShoeCard from "../../../components/cards/ShoeCard";
 
 function BestSeller({ staus }) {
-  const [data, setData] = useState(shopcardData);
+  const data = shopcardData;
+  // const [data, setData] = useState(shopcardData);
   return (
     <>
       <div className="shop-container">

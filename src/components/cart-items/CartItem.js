@@ -25,7 +25,7 @@ function CartItem({ image, name, cartid, setGrantTotal, amount }) {
         : item
     );
     setCartData(upatedCartData);
-  }, [cartCount]);
+  }, [cartCount, cartdata, cartid, setCartData]);
   return (
     <>
       <div className="cart-item-section">
@@ -33,7 +33,7 @@ function CartItem({ image, name, cartid, setGrantTotal, amount }) {
           <div className="cart-item-top">
             <div className="cart-item-left first-cart-part">
               <div className="cart-item-img">
-                <img src={image} />
+                <img alt="" src={image} />
               </div>
               <div className="cart-item-details">
                 <span>{name}</span>

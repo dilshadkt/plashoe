@@ -15,7 +15,10 @@ function Sale() {
                 <span>Get 20% OFF</span>
                 <button>LEARN MORE</button>
               </div>
-              <img src="https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-store-promo-image-2.jpg" />
+              <img
+                alt=""
+                src="https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-store-promo-image-2.jpg"
+              />
             </div>
             <div className="sale-section-image-item">
               <div className="sale-section-image-item-content">
@@ -24,7 +27,10 @@ function Sale() {
                 <button>LEARN MORE</button>
               </div>
 
-              <img src="https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-store-promo-image-1.jpg" />
+              <img
+                alt=""
+                src="https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-store-promo-image-1.jpg"
+              />
             </div>
           </div>
         </div>

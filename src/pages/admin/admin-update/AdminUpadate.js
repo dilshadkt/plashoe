@@ -47,7 +47,7 @@ function AdminUpadate() {
       <div className="admine-update">
         <div className="admine-update-content">
           <div className="admine-update-parts">
-            <img src={filter[0].image} />
+            <img alt="" src={filter[0].image} />
           </div>
           <div className="admine-update-parts upadate-right">
             <form className={!isEdit ? "form-active" : ""}>

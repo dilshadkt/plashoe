@@ -24,7 +24,7 @@ function AdminUsers() {
   }
   useEffect(() => {
     filterData(search, data);
-  }, [search]);
+  }, [search, data]);
   return (
     <>
       <div className="admin-search-body">

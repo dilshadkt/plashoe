@@ -4,7 +4,8 @@ import NewLookImage from "../../components/NewLookImage";
 import { newLookData } from "../../asset/data/newLook/NewLookImageData";
 
 function NewLook() {
-  const [newLook, setNewLook] = useState(newLookData);
+  const newLook = newLookData;
+  // const [newLook, setNewLook] = useState(newLookData);
   return (
     <>
       <div className="newlook-container">

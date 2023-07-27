@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-function CartCount({ cartCount, setCartCount, setGrantTotal, setCartData }) {
+function CartCount({ cartCount, setCartCount }) {
   function incriment(action) {
     if (action === "+") {
       // setGrantTotal(Math.ceil(100 * cartCount * 100) / 100);

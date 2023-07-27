@@ -25,7 +25,7 @@ function Cart() {
     }, 0);
     setGrantTotal(sum);
     console.log("booom");
-  }, [cartdata]);
+  }, [cartdata, setCartData]);
 
   ////////////////////////////////////////////////////////
 

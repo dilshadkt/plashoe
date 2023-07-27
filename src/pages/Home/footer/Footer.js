@@ -22,7 +22,10 @@ function Footer() {
               <button>SHOP MEN</button>
             </div>
           </div>
-          <img src="https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-store-cta-image-bg.jpg" />
+          <img
+            alt=""
+            src="https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-store-cta-image-bg.jpg"
+          />
         </div>
       </div>
       <div className="footer-section">
@@ -104,7 +107,10 @@ function Footer() {
             © 2023 Recycled Shoe Store. Powered by Recycled Shoe Store.
           </span>
           <div className="payment-cards">
-            <img src="https://websitedemos.net/recycled-shoe-store/wp-content/uploads/sites/983/2021/11/payment-icons.png" />
+            <img
+              alt=""
+              src="https://websitedemos.net/recycled-shoe-store/wp-content/uploads/sites/983/2021/11/payment-icons.png"
+            />
           </div>
         </div>
       </div>

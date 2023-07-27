@@ -176,14 +176,26 @@ const HomeContainer = () => {
                 felis, est, vulputate morbi massa mauris vestibulum dui odio.
               </p>
               <div className="vision-logos">
-                <img src="https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-badge-3.svg" />
-                <img src="https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-badge-2.svg" />
-                <img src="https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-badge-1.svg" />
+                <img
+                  alt=""
+                  src="https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-badge-3.svg"
+                />
+                <img
+                  alt=""
+                  src="https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-badge-2.svg"
+                />
+                <img
+                  alt=""
+                  src="https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-badge-1.svg"
+                />
               </div>
             </div>
             <div className="vsion-body-content-right">
               <div className="vision-rounded-logo">
-                <img src="https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-store-recycled-circle-iamge.jpg" />
+                <img
+                  alt=""
+                  src="https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-store-recycled-circle-iamge.jpg"
+                />
               </div>
             </div>
           </div>

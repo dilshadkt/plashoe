@@ -17,7 +17,7 @@ function AdmineCategory() {
       (item) => item.categorie === prdctId.id
     );
     setAdminCard(filteredDarta);
-  }, [prdctId.id]);
+  }, [prdctId.id, orgData]);
 
   ///////////////////// filter function ☝️ ////////////
 

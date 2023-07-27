@@ -4,7 +4,7 @@ function NewLookImage({ image, caption }) {
   return (
     <>
       <div className="look-image-content">
-        <img src={image} />
+        <img alt="" src={image} />
       </div>
       <div className="look-image-captions">
         <div className="look-image-captions-content">
