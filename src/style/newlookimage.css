@@ -63,3 +63,26 @@
   background-color: orange;
   border: none;
 }
+@media screen and (max-width: 768px) {
+  .look-image-content {
+    height: 200px;
+  }
+  .look-image-captions-content {
+    flex-direction: column;
+    margin: 15px;
+  }
+  .look-image-captions-content-left {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 30px;
+    margin-right: 0;
+  }
+  .look-image-captions-content-right {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .caption-btn {
+    margin-top: 15px;
+  }
+}

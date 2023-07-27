@@ -4,6 +4,7 @@
   background-color: rgb(234, 236, 240);
   display: flex;
   font-family: "Niramit";
+  position: relative;
 }
 .admin-home-left {
   height: 150vh;
@@ -155,4 +156,43 @@
 }
 .nav-content-left span {
   margin-left: 10px;
+}
+.admine-more-icon {
+  visibility: hidden;
+}
+.admine-more {
+  left: -400px;
+  top: 0;
+  position: absolute;
+  transition: all 1s ease;
+}
+.admin-more-active {
+  left: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .admin-home-left {
+    display: none;
+  }
+  .admin-users-content {
+    height: 502px;
+  }
+
+  .userbox-right {
+    display: none;
+  }
+  .userbox-left {
+    width: 100%;
+
+    justify-content: flex-start;
+  }
+  .admine-user-box {
+    margin: 0px 10px;
+  }
+  .admine-more-icon {
+    visibility: visible;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
 }

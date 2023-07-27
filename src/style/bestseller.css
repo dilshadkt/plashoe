@@ -48,7 +48,7 @@
   flex-wrap: wrap;
   /* background-color: green; */
   display: flex;
-
+  justify-content: center;
   align-items: flex-start;
 }
 .shop-card-item {

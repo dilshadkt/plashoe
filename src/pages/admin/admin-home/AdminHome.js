@@ -1,14 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "../../../style/adminHome.css";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import PersonIcon from "@mui/icons-material/Person";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import PermMediaSharpIcon from "@mui/icons-material/PermMediaSharp";
 import MyContext from "../../../components/Mycontext/Mycontext";
-
+import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import { Link, Outlet } from "react-router-dom";
+import AdmonMore from "../admineMore/AdmonMore";
+
 function AdminHome() {
   const { currentAdmin } = useContext(MyContext);
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
   return (
     <>
       <section className="admin-home-container">
@@ -56,6 +59,12 @@ function AdminHome() {
           <Outlet />
         </div>
       </section>
+      <div onClick={() => setIsMoreOpen(true)} className="admine-more-icon">
+        <DensityMediumIcon />
+      </div>
+      <div className={"admine-more " + (isMoreOpen ? "admin-more-active" : "")}>
+        <AdmonMore setIsMoreOpen={setIsMoreOpen} />
+      </div>
     </>
   );
 }

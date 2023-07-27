@@ -15,7 +15,6 @@ const UserLogin = () => {
   const navigate = useNavigate();
 
   function handelLogin() {
-    console.log(UserData);
     const currentUser = UserData.filter(
       (item) =>
         item.username === username && Number(item.password) === Number(password)

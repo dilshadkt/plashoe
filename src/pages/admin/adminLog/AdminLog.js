@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import MyContext from "../../../components/Mycontext/Mycontext";
 function AdminLog() {
   //////////////////////// Contedt 😒😒//////////
-  const { setCurrentAdmin } = useContext(MyContext);
+  const { setCurrentAdmin, setIsAdmineLogin } = useContext(MyContext);
   ///////////////////////////////////////////////
 
   const navigate = useNavigate();
@@ -22,6 +22,7 @@ function AdminLog() {
     );
     setCurrentAdmin(currentAdmin[0].username);
     if (currentAdmin.length === 1) {
+      setIsAdmineLogin(true);
       navigate("/admin");
     } else {
       alert("incorrect username or password");

@@ -26,3 +26,12 @@
   /* background-color: green; */
   margin: 0px 40px;
 }
+@media screen and (max-width: 768px) {
+  .look-head {
+    font-size: 45px;
+    height: 100px;
+  }
+  .newlook-image {
+    margin: 0;
+  }
+}

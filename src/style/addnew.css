@@ -22,6 +22,11 @@
   align-items: center;
   justify-content: center;
 }
+.addnew-img img {
+  font-size: 13px;
+  color: lightgray;
+}
+
 .addnew-img {
   border: 1px dotted lightgray;
   width: 70%;
@@ -86,4 +91,37 @@
   width: 100%;
   height: 100%;
   object-fit: fill;
+}
+@media screen and (max-width: 768px) {
+  .addnew-content {
+    width: 100%;
+    height: 100%;
+
+    flex-direction: column;
+  }
+  .addnew-parts {
+    width: 90%;
+  }
+  .addnew-img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .addnew-form form {
+    width: 100%;
+    height: 400px;
+    background-color: rgb(241, 241, 239);
+    padding: 10px;
+  }
+  .addnew-form label {
+    margin: 10px 0px;
+  }
+  .addnew-form input {
+    width: 98%;
+    border-radius: 5px;
+    margin: 0;
+  }
+  .addnew-form select {
+    width: 100%;
+  }
 }

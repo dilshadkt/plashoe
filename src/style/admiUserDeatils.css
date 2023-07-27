@@ -98,3 +98,35 @@
   justify-content: space-between;
   /* background-color: red; */
 }
+@media screen and (max-width: 768px) {
+  .user-detail-content {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(234, 236, 240);
+    margin-top: 25px;
+  }
+  .userDetails-form {
+    width: 90%;
+
+    height: 100%;
+  }
+  .userDetails-form form {
+    width: 100%;
+    margin-left: 0;
+  }
+  .userDetails-form form input {
+    width: 96%;
+  }
+  .userDetails-form form label {
+    margin: 5px 0px;
+  }
+  .admin-user-order-details {
+    margin: 10px 0px;
+    width: 90%;
+    height: 100%;
+    padding-bottom: 10px;
+  }
+  .user-order-total {
+    margin-top: 10px;
+  }
+}

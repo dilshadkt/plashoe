@@ -1,11 +1,11 @@
 .shop-card-Container {
-  width: 385px;
+  width: 335px;
   height: 500px;
   margin-top: 24px;
 }
 .shop-card-top {
   width: 100%;
-  height: 370px;
+  height: 350px;
   /* background-color: yellow; */
   display: flex;
   align-items: center;

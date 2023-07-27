@@ -4,7 +4,7 @@ import NewLook from "../new-look/NewLook";
 import ContentCard from "../../components/content-card/ContentCard";
 import BrowsShoe from "../../components/brows-shoe/BrowsShoe";
 import Sale from "../sales/Sale";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { CartedProduct } from "../../asset/data/cart-data/CartedProduct";
 import MyContext from "../../components/Mycontext/Mycontext";
@@ -25,8 +25,12 @@ import UserSignUp from "../auth/user Sign/UserSignUp";
 import AdmineUserDetails from "../../components/admin-users/Admine-user-Details/AdmineUserDetails";
 import { UserData } from "../../asset/data/userData/Userdata";
 import AdminLog from "../admin/adminLog/AdminLog";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const location = useLocation();
+  const navigator = useNavigate();
   const [orgData, setOrgData] = useState(shopcardData);
   const [cartOpen, setCartOpen] = useState(false);
   const [shoeqauntiy, setShoeQauntity] = useState(1);
@@ -35,6 +39,8 @@ const Home = () => {
   const [currentUser, setCurrentUser] = useState("User");
   const [currentAdmin, setCurrentAdmin] = useState("");
   const [userData, setUerData] = useState(UserData);
+
+  const [issAdmineLogin, setIsAdmineLogin] = useState(false);
 
   /////////////////////// passing context 😒 /////////////////////
   const myName = {
@@ -53,9 +59,16 @@ const Home = () => {
     setUerData: setUerData,
     currentAdmin: currentAdmin,
     setCurrentAdmin: setCurrentAdmin,
+    setIsAdmineLogin: setIsAdmineLogin,
   };
 
   /////////////////////////////////////////////////////////////
+
+  useEffect(() => {
+    if (location.pathname === "/admin") {
+      issAdmineLogin ? navigator("/admin") : navigator("/adminLog");
+    }
+  }, [location.pathname]);
 
   return (
     <MyContext.Provider value={myName}>

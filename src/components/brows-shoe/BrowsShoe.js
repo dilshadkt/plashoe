@@ -15,7 +15,7 @@ function BrowsShoe({ qauntity, setQauntity, setCartData, cartdata }) {
   const filter = shopcardData.filter(
     (item) => item.id.toString() === id.noid.toString()
   );
-  console.log(filter);
+
   const [shops, setShops] = useState(filter[0]);
 
   ////////////// related shoes /////////////

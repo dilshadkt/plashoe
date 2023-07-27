@@ -6,7 +6,7 @@ function RelatedShoe({ image, name, amount, number }) {
   return (
     <>
       <div className="related-card-Container">
-        <Link reloadDocument to={"/browse/" + number}>
+        <Link to={"/browse/" + number}>
           <div className="shop-card-top">
             <img alt="" src={image} />
             <div className="quick-view">Quick View</div>

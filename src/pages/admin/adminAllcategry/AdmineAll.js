@@ -19,7 +19,7 @@ function AdmineAll() {
     <>
       <div className="admin-prdct-content">
         {orgData.map((item) => (
-          <span>
+          <span key={item.key}>
             <AdmineCards
               image={item.image}
               name={item.name}

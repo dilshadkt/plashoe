@@ -1,0 +1,18 @@
+.admine-more-option-content {
+  padding-top: 30px;
+  position: relative;
+  width: 250px;
+  height: 100vh;
+  background-color: rgb(54, 55, 64);
+  z-index: 20;
+}
+.admine-more-option-content h3 {
+  color: white;
+  margin: 20px 0px;
+}
+.admine-more-option-content span {
+  width: 98%;
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+}

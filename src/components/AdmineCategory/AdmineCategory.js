@@ -35,7 +35,7 @@ function AdmineCategory() {
     <>
       <div className="admin-prdct-content">
         {adminCard.map((item) => (
-          <span>
+          <span key={item.id}>
             <AdmineCards
               image={item.image}
               name={item.name}

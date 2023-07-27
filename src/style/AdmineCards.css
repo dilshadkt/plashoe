@@ -75,3 +75,20 @@
 .admine-card-bottom span del {
   color: lightgray;
 }
+
+@media screen and (max-width: 768px) {
+  .admine-card-Container {
+    width: 160px;
+    height: 300px;
+  }
+  .admine-card-top {
+    height: 160px;
+    width: 100%;
+  }
+  .admine-card-bottom h4 {
+    font-size: 14px;
+  }
+  .admine-card-bottom {
+    height: 100px;
+  }
+}

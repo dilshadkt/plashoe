@@ -37,7 +37,7 @@ function AdminUsers() {
       <div className="admin-users-content">
         {filterdata.map((item) => (
           <>
-            <div className="admine-user-details">
+            <div key={item.id} className="admine-user-details">
               <div className="admine-user-box">
                 <div className="user-box userbox-left">
                   <NavLink to={`user/${item.id}`}>

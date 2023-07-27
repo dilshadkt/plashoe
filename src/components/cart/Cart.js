@@ -15,11 +15,21 @@ function Cart() {
         index ===
         self.findIndex((obj) => obj.id === item.id && obj.name === item.name)
     );
-
     setCartData(filterData);
   }, [cartdata.length]);
 
-  const [grantTotal, setGrantTotal] = useState(10);
+  //////////////////////////  grant total 💰💰💰///////////
+  useEffect(() => {
+    let sum = cartdata.reduce((acc, current) => {
+      return acc + Number(current.amount);
+    }, 0);
+    setGrantTotal(sum);
+    console.log("booom");
+  }, [cartdata]);
+
+  ////////////////////////////////////////////////////////
+
+  const [grantTotal, setGrantTotal] = useState(0);
 
   return (
     <>
@@ -57,6 +67,7 @@ function Cart() {
                     image={item.image}
                     name={item.name}
                     cartid={item.id}
+                    amount={item.amount}
                     setGrantTotal={setGrantTotal}
                   />
                 </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../style/cartItem.css";
 import { useState } from "react";
 import HighlightOffSharpIcon from "@mui/icons-material/HighlightOffSharp";
@@ -6,15 +6,26 @@ import CartCount from "../cart-count-btn/CartCount";
 import { useContext } from "react";
 import MyContext from "../Mycontext/Mycontext";
 
-function CartItem({ image, name, cartid, setGrantTotal }) {
+function CartItem({ image, name, cartid, setGrantTotal, amount }) {
   const { shoeqauntiy, cartdata, setCartData } = useContext(MyContext);
   function removeItem(id) {
     const result = cartdata.filter((item) => item.id != id);
     setCartData(result);
   }
-  console.log(cartdata);
+
   const [cartCount, setCartCount] = useState(shoeqauntiy);
 
+  useEffect(() => {
+    const upatedCartData = cartdata.map((item) =>
+      Number(item.id) === Number(cartid)
+        ? {
+            ...item,
+            amount: 100 * cartCount,
+          }
+        : item
+    );
+    setCartData(upatedCartData);
+  }, [cartCount]);
   return (
     <>
       <div className="cart-item-section">
@@ -43,7 +54,7 @@ function CartItem({ image, name, cartid, setGrantTotal }) {
               >
                 <HighlightOffSharpIcon />
               </div>
-              <div>{"$" + Math.ceil(100 * cartCount * 100) / 100}</div>
+              <div>{"$" + amount}</div>
             </div>
           </div>
           <div className="cart-item-bottom">

@@ -7,9 +7,12 @@ import { useContext, useState } from "react";
 import MyContext from "../../../components/Mycontext/Mycontext";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LoginIcon from "@mui/icons-material/Login";
+import DensityMediumIcon from "@mui/icons-material/DensityMedium";
+import More from "../More/More";
 
 const Navbar = () => {
   const [islogOpen, setIsLogOpen] = useState(false);
+  const [isopenMore, setIsOpenMore] = useState(false);
 
   const { setCartOpen, cartdata, isLogin, currentUser } = useContext(MyContext);
 
@@ -23,6 +26,14 @@ const Navbar = () => {
         </div>
         <div className="bottom-nav">
           <div className="nav-left">
+            <div
+              onClick={() => setIsOpenMore(true)}
+              className="small-screen-more"
+            >
+              <div className="more-option">
+                <DensityMediumIcon />
+              </div>
+            </div>
             <div className="nav-logo">
               <p>
                 <NavLink to={"/"}>PLASHOE</NavLink>
@@ -134,6 +145,9 @@ const Navbar = () => {
         </div>
       </div>
       <Cart />
+      <div className="more-option-list-data">
+        <More isopenMore={isopenMore} setIsOpenMore={setIsOpenMore} />
+      </div>
     </>
   );
 };
