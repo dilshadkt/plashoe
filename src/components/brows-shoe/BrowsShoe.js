@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../style/browserShoe.css";
 import DescriptionShoe from "../description/DescriptionShoe";
 
@@ -15,8 +15,8 @@ function BrowsShoe({ qauntity, setQauntity, setCartData, cartdata }) {
   const filter = shopcardData.filter(
     (item) => item.id.toString() === id.noid.toString()
   );
-
-  const [shops, setShops] = useState(filter[0]);
+  const shops = filter[0];
+  // const [shops, setShops] = useState(filter[0]);
 
   ////////////// related shoes /////////////
 

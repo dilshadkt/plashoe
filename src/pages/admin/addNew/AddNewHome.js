@@ -41,7 +41,7 @@ function AddNewHome() {
       <div className="addnew-content">
         <div className="addnew-parts">
           <div className="addnew-img">
-            <img src={img} alt="add new image" />
+            <img src={img} alt="" />
           </div>
         </div>
         <div className="addnew-parts">

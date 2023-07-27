@@ -34,7 +34,10 @@ function AdminLog() {
         <div className="AdminLogPage-content">
           <div className="AdminLogPage-logo">
             <div className="Adminlogin-logo">
-              <img src="https://assets.turbologo.com/blog/en/2020/03/19084544/monogram-logo-black-958x575.png" />
+              <img
+                alt=""
+                src="https://assets.turbologo.com/blog/en/2020/03/19084544/monogram-logo-black-958x575.png"
+              />
             </div>
           </div>
           <div className="AdminLogPage-form">

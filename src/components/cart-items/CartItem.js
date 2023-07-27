@@ -9,7 +9,7 @@ import MyContext from "../Mycontext/Mycontext";
 function CartItem({ image, name, cartid, setGrantTotal, amount }) {
   const { shoeqauntiy, cartdata, setCartData } = useContext(MyContext);
   function removeItem(id) {
-    const result = cartdata.filter((item) => item.id != id);
+    const result = cartdata.filter((item) => Number(item.id) !== Number(id));
     setCartData(result);
   }
 

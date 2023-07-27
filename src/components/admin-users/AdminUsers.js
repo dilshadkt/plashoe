@@ -12,7 +12,8 @@ function AdminUsers() {
   }
 
   /////////////////////////// search operation //////////////////////
-  const [data, setdata] = useState(UserData);
+  const data = UserData;
+  // const [data, setdata] = useState(UserData);
   const [filterdata, setFilterdata] = useState(UserData);
   const [search, setSearch] = useState([]);
   function filterData(search, users) {
@@ -42,7 +43,10 @@ function AdminUsers() {
                 <div className="user-box userbox-left">
                   <NavLink to={`user/${item.id}`}>
                     <div className="user-box-logo">
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE85hRxY6RrYvL8hhco7qmc3NnyMx_picyr9baG_MZmA&s" />
+                      <img
+                        alt=""
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE85hRxY6RrYvL8hhco7qmc3NnyMx_picyr9baG_MZmA&s"
+                      />
                     </div>
                   </NavLink>
                   <div className="user-box-details">

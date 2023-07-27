@@ -1,5 +1,4 @@
 import HomeContainer from "../homeContainer/HomeContainer";
-import { AdmineData } from "../../asset/data/Admin/AdmineData";
 import NewLook from "../new-look/NewLook";
 import ContentCard from "../../components/content-card/ContentCard";
 import BrowsShoe from "../../components/brows-shoe/BrowsShoe";
@@ -68,7 +67,7 @@ const Home = () => {
     if (location.pathname === "/admin") {
       issAdmineLogin ? navigator("/admin") : navigator("/adminLog");
     }
-  }, [location.pathname]);
+  });
 
   return (
     <MyContext.Provider value={myName}>

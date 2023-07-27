@@ -10,14 +10,17 @@ function AdmineUserDetails() {
   const filteredUser = UserData.filter(
     (item) => item.id === Number(userId.userId)
   );
-  console.log(filteredUser);
+
   return (
     <>
       <div className="adminUser-details-content">
         <div className="user-detail-content">
           <div className="user-details-log">
             <div className="logo-container">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE85hRxY6RrYvL8hhco7qmc3NnyMx_picyr9baG_MZmA&s" />
+              <img
+                alt=""
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE85hRxY6RrYvL8hhco7qmc3NnyMx_picyr9baG_MZmA&s"
+              />
             </div>
           </div>
           <div className="userDetails-form">
