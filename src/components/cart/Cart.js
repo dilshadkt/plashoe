@@ -19,13 +19,16 @@ function Cart() {
   }, [cartdata.length]);
 
   //////////////////////////  grant total 💰💰💰///////////
-  useEffect(() => {
-    let sum = cartdata.reduce((acc, current) => {
-      return acc + Number(current.amount);
-    }, 0);
-    setGrantTotal(sum);
-    console.log("booom");
-  }, [cartdata, setCartData]);
+  useEffect(
+    () => {
+      let sum = cartdata.reduce((acc, current) => {
+        return acc + Number(current.amount);
+      }, 0);
+      setGrantTotal(sum);
+      console.log("booom");
+    }
+    // , [cartdata, setCartData]
+  );
 
   ////////////////////////////////////////////////////////
 

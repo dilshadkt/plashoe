@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../../style/bestseller.css";
 import { shopcardData } from "../../../asset/data/shopCard/ShopData";
 import ShoeCard from "../../../components/cards/ShoeCard";

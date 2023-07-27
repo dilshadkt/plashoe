@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../style/newlook.css";
 import NewLookImage from "../../components/NewLookImage";
 import { newLookData } from "../../asset/data/newLook/NewLookImageData";
