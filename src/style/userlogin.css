@@ -83,3 +83,6 @@
   align-items: center;
   justify-content: space-between;
 }
+.forgetSection a {
+  color: inherit;
+}

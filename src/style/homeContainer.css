@@ -639,6 +639,8 @@ hr {
     justify-content: center;
     align-items: center;
     margin: 0;
+    padding: 0px 20px;
+    /* background-color: red; */
   }
   .banner-head span {
     width: 80%;

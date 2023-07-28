@@ -6,7 +6,12 @@ import PersonIcon from "@mui/icons-material/Person";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import PermMediaSharpIcon from "@mui/icons-material/PermMediaSharp";
 import ClearIcon from "@mui/icons-material/Clear";
+import { useNavigate } from "react-router-dom";
 function AdmonMore({ setIsMoreOpen }) {
+  const navigator = useNavigate();
+  function adminLogout() {
+    navigator("/");
+  }
   return (
     <>
       <div className="admine-more-option-content">
@@ -47,6 +52,9 @@ function AdmonMore({ setIsMoreOpen }) {
             </div>
           </div>
         </Link>
+        <div className="adminLogout-btn" onClick={() => adminLogout()}>
+          Logout
+        </div>
       </div>
     </>
   );

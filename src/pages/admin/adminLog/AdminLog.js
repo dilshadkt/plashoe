@@ -10,18 +10,18 @@ function AdminLog() {
 
   const navigate = useNavigate();
   const [adminName, setAdminName] = useState("");
-  const [adminPassword, setAdminPassword] = useState();
+  const [adminPassword, setAdminPassword] = useState("");
 
   /////////////////// validating the admin //////////
   function validAdmine() {
-    console.log("in fun");
     const currentAdmin = AdmineData.filter(
       (item) =>
         item.username === adminName &&
         Number(item.password) === Number(adminPassword)
     );
-    setCurrentAdmin(currentAdmin[0].username);
+
     if (currentAdmin.length === 1) {
+      setCurrentAdmin(currentAdmin[0].username);
       setIsAdmineLogin(true);
       navigate("/admin");
     } else {
@@ -52,7 +52,7 @@ function AdminLog() {
                 type="text"
                 onChange={(e) => setAdminPassword(e.target.value)}
               />
-              <span onClick={() => validAdmine()}>Sign in</span>
+              <button onClick={() => validAdmine()}>Sign in</button>
             </form>
           </div>
         </div>
