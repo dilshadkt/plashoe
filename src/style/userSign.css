@@ -54,7 +54,7 @@
 }
 .userSignin-form form input {
   width: 98%;
-  height: 10%;
+  height: 70px;
   border: 1px solid lightgray;
   border-radius: 8px;
   padding-left: 10px;
@@ -144,5 +144,8 @@
   }
   .errUserName {
     visibility: hidden;
+  }
+  .userSign-body {
+    height: 100%;
   }
 }
