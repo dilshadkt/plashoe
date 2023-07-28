@@ -13,7 +13,7 @@
   margin: 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 .home-card-container-item {
   width: 700px;
