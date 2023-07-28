@@ -85,4 +85,9 @@
     width: 100%;
     height: fit-content;
   }
+
+  .AdminLogPage-form form button {
+    margin-top: 0;
+    padding: 13px 0px;
+  }
 }
