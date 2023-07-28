@@ -67,7 +67,7 @@ const Home = () => {
     if (location.pathname === "/admin") {
       issAdmineLogin ? navigator("/admin") : navigator("/adminLog");
     }
-  });
+  }, [location.pathname]);
 
   return (
     <MyContext.Provider value={myName}>
