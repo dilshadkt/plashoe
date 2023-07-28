@@ -16,6 +16,14 @@
 
   position: relative;
 }
+.shop-btn a {
+  text-decoration: none;
+  color: inherit;
+}
+.readmore-btn a {
+  text-decoration: none;
+  color: inherit;
+}
 .img > img {
   width: 100%;
   height: 100%;

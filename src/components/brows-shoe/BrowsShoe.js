@@ -9,14 +9,13 @@ import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import MyContext from "../Mycontext/Mycontext";
 
-function BrowsShoe({ qauntity, setQauntity, setCartData, cartdata }) {
+function BrowsShoe({ qauntity, setQauntity, setCartData }) {
   const id = useParams();
   const { isLogin } = useContext(MyContext);
   const filter = shopcardData.filter(
     (item) => item.id.toString() === id.noid.toString()
   );
   const shops = filter[0];
-  // const [shops, setShops] = useState(filter[0]);
 
   ////////////// related shoes /////////////
 

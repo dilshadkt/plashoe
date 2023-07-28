@@ -29,11 +29,12 @@
   /* background-color: cyan; */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 .sale-section-image-item {
   width: 700px;
   height: 100%;
+  margin: 0px 10px;
   /* background-color: purple; */
   display: flex;
   align-items: center;

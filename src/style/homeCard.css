@@ -42,7 +42,10 @@
   font-weight: 500;
   color: white;
 }
-
+.home-card-container-content a {
+  text-decoration: none;
+  color: inherit;
+}
 .home-card-container-content button {
   background-color: transparent;
   color: white;

@@ -12,7 +12,9 @@ function HomeCardContainer() {
           />
           <div className="home-card-container-content">
             <span>Men</span>
-            <button>SHOP MEN</button>
+            <button>
+              <a href="#home">SHOP MEN</a>
+            </button>
           </div>
         </div>
         <div className="home-card-container-item">
@@ -22,7 +24,9 @@ function HomeCardContainer() {
           />
           <div className="home-card-container-content">
             <span>Women</span>
-            <button>SHOP WOMEN</button>
+            <button>
+              <a href="#home">SHOP WOMEN</a>
+            </button>
           </div>
         </div>
       </div>

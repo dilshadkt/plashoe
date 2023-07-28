@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="nav-container">
+      <div className="nav-container" id="home">
         <div className="top-nav">
           <span>
             Free Express Shipping on all orders with all duties included

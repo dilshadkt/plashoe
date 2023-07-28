@@ -26,8 +26,13 @@ const HomeContainer = () => {
               </span>
             </div>
             <div className="home-btn">
-              <button className="shop-btn">SHOP MEN</button>
-              <button className="shop-btn">SHOP WOMEN</button>
+              <button className="shop-btn">
+                <a href="#home">SHOP MEN </a>
+              </button>
+
+              <button className="shop-btn">
+                <a href="#home">SHOP WOMEN</a>
+              </button>
             </div>
           </div>
         </div>
@@ -92,7 +97,9 @@ const HomeContainer = () => {
                 enim pretium risus gravida ullamcorper adipiscing at ut magna.
               </p>
               <div className="readmore-btn">
-                <div>READ MORE</div>
+                <div>
+                  <a href="#home">READ MORE </a>
+                </div>
                 <div className="line"></div>
               </div>
             </div>
