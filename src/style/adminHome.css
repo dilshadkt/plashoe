@@ -195,4 +195,11 @@
     top: 20px;
     left: 20px;
   }
+  .admin-users-content {
+    margin: 0px 10px;
+    height: fit-content;
+  }
+  .admin-home-container {
+    height: 670px;
+  }
 }
