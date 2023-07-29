@@ -594,6 +594,9 @@ hr {
   }
 
   /* ///////////////////////about//////////////// */
+  .line {
+    display: none;
+  }
   .about-container {
     flex-direction: column;
   }
@@ -729,6 +732,9 @@ hr {
   }
 
   /* /////////////////////vision ////// */
+  .vision {
+    padding: 0px;
+  }
   .vsion-body {
     width: 100%;
     flex-direction: column;

@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 function CountButton({ qauntity, setQauntity }) {
-  const [count, setCount] = useState(0);
   return (
     <>
       <div className="shoe-quantity-container">

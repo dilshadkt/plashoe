@@ -34,6 +34,7 @@ function BrowsShoe({ qauntity, setQauntity, setCartData }) {
         amount: `${shops.amount}`,
       },
     ]);
+    setQauntity(1);
   }
   // console.log(cartdata);
 
@@ -70,6 +71,7 @@ function BrowsShoe({ qauntity, setQauntity, setCartData }) {
                       <button
                         onClick={() => {
                           isLogin ? addtoCart() : alert("please login ");
+                          // setQauntity(1);
                           // console.log("hello");
                         }}
                       >
