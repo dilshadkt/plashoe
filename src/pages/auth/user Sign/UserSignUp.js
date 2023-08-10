@@ -33,7 +33,12 @@ function UserSignUp() {
     } else {
       setUerData((prev) => [
         ...prev,
-        { name: username, username: userEmail, password: userPass },
+        {
+          name: username,
+          username: userEmail,
+          password: userPass,
+          id: UserData.length + 1,
+        },
       ]);
       console.log(UserData);
       history("/login");
