@@ -25,7 +25,6 @@ function Cart() {
         return acc + Number(current.amount);
       }, 0);
       setGrantTotal(sum);
-      console.log("booom");
     }
     // , [cartdata, setCartData]
   );

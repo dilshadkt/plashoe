@@ -599,7 +599,10 @@ hr {
   }
   .about-container {
     flex-direction: column;
+    height: fit-content;
+    padding-bottom: 30px;
   }
+
   .about-left {
     width: 100%;
     height: 300px;
@@ -651,15 +654,15 @@ hr {
     align-items: center;
     margin: 0;
     padding: 0px 20px;
-    /* background-color: red; */
   }
+
   .banner-head span {
     width: 80%;
     font-size: 26px;
     font-weight: 500;
   }
   .banner-container {
-    margin-top: 40px;
+    margin-top: -30px;
   }
   .banner-head-content {
     margin-top: 20px;

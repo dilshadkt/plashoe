@@ -1,11 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-import { UserData } from "../../asset/data/userData/Userdata";
+// import { UserData } from "../../asset/data/userData/Userdata";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import MyContext from "../Mycontext/Mycontext";
 
 function AdminUsers() {
-  // const [userdata, setUserData] = useState(UserData);
+  ////////////////// context 😍/////////////////
+  const { UserData } = useContext(MyContext);
+  ///////////////////////////////////////////////
+
   function removeItem(id) {
     const result = filterdata.filter((item) => item.id !== id);
     setFilterdata(result);

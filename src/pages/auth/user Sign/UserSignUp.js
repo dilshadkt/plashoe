@@ -39,6 +39,7 @@ function UserSignUp() {
       history("/login");
     }
   }
+  console.log(UserData);
   return (
     <>
       <div className="userSign-body">

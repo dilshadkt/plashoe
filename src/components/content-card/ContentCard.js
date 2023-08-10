@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../../style/contentCard.css";
 import ViewStreamSharpIcon from "@mui/icons-material/ViewStreamSharp";
 import FormatListBulletedSharpIcon from "@mui/icons-material/FormatListBulletedSharp";
-import { shopcardData } from "../../asset/data/shopCard/ShopData";
-
+import MyContext from "../Mycontext/Mycontext";
 import ShoeCard from "../cards/ShoeCard";
 
 function ContentCard() {
+  /////////////////// context 😍 /////////////////
+
+  const { orgData } = useContext(MyContext);
+  //////////////////////////////////////
   const shophead = useParams();
   useEffect(() => {
-    const filterDarta = shopcardData.filter((item) =>
+    const filterDarta = orgData.filter((item) =>
       shophead.id === "Collection" ? item : item.categorie === shophead.id
     );
     setShopData(filterDarta);
