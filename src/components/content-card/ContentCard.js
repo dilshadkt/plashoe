@@ -1,25 +1,24 @@
-import React, { useEffect, useContext, useState } from "react";
+import FormatListBulletedSharpIcon from "@mui/icons-material/FormatListBulletedSharp";
+import ViewStreamSharpIcon from "@mui/icons-material/ViewStreamSharp";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../../style/contentCard.css";
-import ViewStreamSharpIcon from "@mui/icons-material/ViewStreamSharp";
-import FormatListBulletedSharpIcon from "@mui/icons-material/FormatListBulletedSharp";
-import MyContext from "../Mycontext/Mycontext";
 import ShoeCard from "../cards/ShoeCard";
 
 function ContentCard() {
-  /////////////////// context 😍 /////////////////
-
-  const { orgData } = useContext(MyContext);
-  //////////////////////////////////////
   const shophead = useParams();
-  useEffect(() => {
-    const filterDarta = orgData.filter((item) =>
-      shophead.id === "Collection" ? item : item.categorie === shophead.id
-    );
-    setShopData(filterDarta);
-  }, [shophead.id]);
 
-  const [shopData, setShopData] = useState([]);
+  const [product, setProduct] = useState([]);
+  useEffect(() => {
+    axios
+      .get(
+        `http://localhost:8080/admine/products?category=${
+          shophead.id === "Collection" ? "all" : shophead.id
+        }`
+      )
+      .then((res) => setProduct(res.data.data));
+  }, [shophead.id]);
 
   return (
     <>
@@ -33,7 +32,7 @@ function ContentCard() {
               <div className="content-container-body-part-bar-items">
                 <div className="content-container-filter">FILTER SHOES</div>
                 <div className="content-container-showall">
-                  Showing all {shopData.length} results
+                  Showing all {product.length} results
                 </div>
               </div>
               <div className="content-container-body-part-bar-items bar-item-right">
@@ -47,12 +46,13 @@ function ContentCard() {
               </div>
             </div>
             <div className="content-container-shoe-cards">
-              {shopData.map((item) => (
+              {product.map((item) => (
                 <div className="content-container-shoe-card" key={item.id}>
                   <ShoeCard
                     image={item.image}
-                    name={item.name}
-                    number={item.id}
+                    name={item.title}
+                    number={item._id}
+                    amnt={item.price}
                   />
                 </div>
               ))}

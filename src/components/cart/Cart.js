@@ -5,10 +5,23 @@ import ClearSharpIcon from "@mui/icons-material/ClearSharp";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import MyContext from "../Mycontext/Mycontext";
+import { userInstance } from "../../axios/AxiosInstance";
 
 function Cart() {
   const { setCartOpen, cartOpen, setCartData, cartdata } =
     useContext(MyContext);
+
+  ///////////////////////////////////////////
+
+  const [cart, setCart] = useState([]);
+  const [total, setTotal] = useState("");
+  useEffect(() => {
+    userInstance
+      .get(`/cart`)
+      .then((res) => setCart(res.data))
+      .catch((err) => console.log(err));
+  }, [cartOpen]);
+
   useEffect(() => {
     var filterData = cartdata.filter(
       (item, index, self) =>
@@ -19,15 +32,19 @@ function Cart() {
   }, [cartdata.length]);
 
   //////////////////////////  grant total 💰💰💰///////////
-  useEffect(
-    () => {
-      let sum = cartdata.reduce((acc, current) => {
-        return acc + Number(current.amount);
-      }, 0);
-      setGrantTotal(sum);
-    }
-    // , [cartdata, setCartData]
-  );
+  useEffect(() => {
+    let sum = cart.reduce((acc, item) => acc + item.price, 0);
+    setTotal(sum);
+  }, [cart]);
+
+  async function removeItem(id) {
+    const result = cartdata.filter((item) => item.id !== id);
+    setCart(result);
+    await userInstance
+      .delete(`/cart?productId=${id}`)
+      .then((res) => setCart(res.data.cart))
+      .catch((err) => console.log(err));
+  }
 
   ////////////////////////////////////////////////////////
 
@@ -45,11 +62,10 @@ function Cart() {
         <hr />
         <div
           className={
-            "cart-item-show-container " +
-            (cartdata.length === 0 && "active-cart")
+            "cart-item-show-container " + (cart.length === 0 && "active-cart")
           }
         >
-          {cartdata.length === 0 ? (
+          {cart.length === 0 ? (
             <>
               <div className="empty-cart">No products in the cart.</div>
               <div className="continue-shoping">
@@ -62,15 +78,15 @@ function Cart() {
             </>
           ) : (
             <>
-              {" "}
-              {cartdata.map((item) => (
-                <div className="shop-cart-item" key={item.id}>
+              {cart.map((item, index) => (
+                <div className="shop-cart-item" key={index}>
                   <CartItem
                     image={item.image}
-                    name={item.name}
-                    cartid={item.id}
-                    amount={item.amount}
+                    name={item.title}
+                    cartid={item._id}
+                    amount={item.price}
                     setGrantTotal={setGrantTotal}
+                    removeItem={removeItem}
                   />
                 </div>
               ))}
@@ -81,7 +97,7 @@ function Cart() {
           <div className="total-content-box">
             <div className="sub-total">
               <span>Subtotal:</span>
-              <div className="grant-total">${grantTotal}</div>
+              <div className="grant-total">${total}</div>
             </div>
             <hr />
             <div className="total-btn">

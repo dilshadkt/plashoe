@@ -6,12 +6,12 @@ import CartCount from "../cart-count-btn/CartCount";
 import { useContext } from "react";
 import MyContext from "../Mycontext/Mycontext";
 
-function CartItem({ image, name, cartid, setGrantTotal, amount }) {
+function CartItem({ image, name, cartid, setGrantTotal, amount, removeItem }) {
   const { shoeqauntiy, cartdata, setCartData } = useContext(MyContext);
-  function removeItem(id) {
-    const result = cartdata.filter((item) => Number(item.id) !== Number(id));
-    setCartData(result);
-  }
+  // function removeItem(id) {
+  //   const result = cartdata.filter((item) => item.id !== id);
+  //   setCartData(result);
+  // }
 
   const [cartCount, setCartCount] = useState(shoeqauntiy);
 
@@ -25,7 +25,7 @@ function CartItem({ image, name, cartid, setGrantTotal, amount }) {
         : item
     );
     setCartData(upatedCartData);
-  }, [cartCount, cartdata, cartid, setCartData]);
+  }, [cartid]);
   return (
     <>
       <div className="cart-item-section">

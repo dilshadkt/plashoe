@@ -1,42 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../style/browserShoe.css";
 import DescriptionShoe from "../description/DescriptionShoe";
-
 import RelatedShoe from "../RelatedShoe/RelatedShoe";
 import CountButton from "../count-btn/CountButton";
-import { shopcardData } from "../../asset/data/shopCard/ShopData";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import MyContext from "../Mycontext/Mycontext";
 
+import { productInstance, userInstance } from "../../axios/AxiosInstance";
+
 function BrowsShoe({ qauntity, setQauntity, setCartData }) {
   const id = useParams();
-  const { isLogin } = useContext(MyContext);
-  const filter = shopcardData.filter(
-    (item) => item.id.toString() === id.noid.toString()
-  );
-  const shops = filter[0];
+  const [product, setProduct] = useState([]);
+  const [relatedPrduct, setRelatedPrduct] = useState([]);
 
-  ////////////// related shoes /////////////
-
-  const relatedCategorie = shops.categorie;
-  const reletedData = shopcardData.filter(
-    (item) => item.categorie === relatedCategorie
-  );
+  useEffect(() => {
+    productInstance.get(`/${id.noid}`).then((res) => setProduct(res.data.data));
+  }, []);
+  useEffect(() => {
+    productInstance
+      .get(`?category=${product.category}`)
+      .then((res) => setRelatedPrduct(res.data.data));
+  }, [product]);
+  const { isLogin, setisBtnClick, isbtnClick } = useContext(MyContext);
 
   function addtoCart() {
+    const productId = id.noid;
+
+    userInstance
+      .post(`/cart`, {
+        productId,
+      })
+      .then((res) => setisBtnClick(!isbtnClick))
+      .catch((res) => console.log(res));
     setCartData((prev) => [
       ...prev,
       {
-        image: `${shops.image}`,
-        name: `${shops.name}`,
-        id: `${shops.id}`,
-        amount: `${shops.amount}`,
+        image: `${product.image}`,
+        name: `${product.title}`,
+        id: `${product._id}`,
+        amount: `${product.price}`,
       },
     ]);
+
     setQauntity(1);
   }
-  // console.log(cartdata);
 
   return (
     <>
@@ -45,14 +53,14 @@ function BrowsShoe({ qauntity, setQauntity, setCartData }) {
           <div className="Brows-shoe-body">
             <div className="Brows-shoe-top">
               <div className="Brows-shoe-body-top">
-                <img src={shops.image} alt="" />
+                <img src={product.image} alt="" />
               </div>
               <div className="Brows-shoe-body-top browse-payment">
                 <div className=" browse-payment-content">
-                  <div className="top-caption">{shops.categorie}, Sneaker</div>
-                  <div className="top-head">{shops.name}</div>
+                  <div className="top-caption">{product.category}, Sneaker</div>
+                  <div className="top-head">{product.title}</div>
                   <div className="top-amount">
-                    <span>${shops.amount}</span> & Free Shipping
+                    <span>${product.price}</span> & Free Shipping
                   </div>
                   <div className="browse-about-section">
                     <p>
@@ -71,8 +79,6 @@ function BrowsShoe({ qauntity, setQauntity, setCartData }) {
                       <button
                         onClick={() => {
                           isLogin ? addtoCart() : alert("please login ");
-                          // setQauntity(1);
-                          // console.log("hello");
                         }}
                       >
                         ADD TO CART
@@ -109,12 +115,12 @@ function BrowsShoe({ qauntity, setQauntity, setCartData }) {
               <DescriptionShoe />
               <div className="related-prdct-head">Related products</div>
               <div className="brows-related-shoes">
-                {reletedData.map((item) => (
+                {relatedPrduct.map((item) => (
                   <RelatedShoe
                     image={item.image}
-                    key={item.id}
-                    name={item.name}
-                    amount={item.amount}
+                    key={item._id}
+                    name={item.title}
+                    amount={item.price}
                     number={item.id}
                   />
                 ))}

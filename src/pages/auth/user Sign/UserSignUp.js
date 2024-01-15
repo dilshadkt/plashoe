@@ -1,50 +1,50 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import "../../../style/userSign.css";
 import { useNavigate } from "react-router-dom";
-import MyContext from "../../../components/Mycontext/Mycontext";
+// import MyContext from "../../../components/Mycontext/Mycontext";
+import { userLogInstance } from "../../../axios/AxiosInstance";
+import { useForm } from "react-hook-form";
 
 function UserSignUp() {
   ////////////////// navigate /////////////
   const history = useNavigate();
-  ////////////////////////////////////////
-  ////////////// context 🏳️‍🌈🏳️‍🌈///////////
-  const { setUerData, UserData } = useContext(MyContext);
-
-  const [username, setUsername] = useState("");
-  const [userEmail, setUserEmail] = useState();
-  const [userPass, setUserPass] = useState("");
-  const [userConfPass, setUserConfPass] = useState();
+  // const { setUerData, UserData } = useContext(MyContext);
+  const { register, watch } = useForm();
 
   /////////////////////////validation states //////////////
   const [isemptyname, setIsEmptyName] = useState(false);
   const [isemptyPass, setIsEmptyPass] = useState(false);
   const [isempty, setIsEmpty] = useState(false);
-
+  const [error, setError] = useState(false);
   function UserSignin() {
     setIsEmptyName(false);
     setIsEmptyPass(false);
     setIsEmpty(false);
-    if (username === "" || userEmail === "") {
+    if (watch().username === "" || watch().email === "") {
       setIsEmptyName(true);
-    } else if (userPass === "") {
+    } else if (watch().password === "") {
       setIsEmpty(true);
-    } else if (userPass !== userConfPass) {
+    } else if (watch().password !== watch().confirmPassword) {
       setIsEmptyPass(true);
     } else {
-      setUerData((prev) => [
-        ...prev,
-        {
-          name: username,
-          username: userEmail,
-          password: userPass,
-          id: UserData.length + 1,
-        },
-      ]);
-      console.log(UserData);
-      history("/login");
+      const user = {
+        username: watch().username,
+        email: watch().email,
+        password: watch().password,
+        confirmPass: watch().confirmPassword,
+      };
+      userLogInstance
+        .post("/register", user)
+        .then((res) => {
+          history("/login");
+        })
+        .catch((err) => {
+          setError(err.response.data.message);
+          alert(`${err.response.data.message}`);
+        });
     }
   }
-  console.log(UserData);
+
   return (
     <>
       <div className="userSign-body">
@@ -65,15 +65,9 @@ function UserSignUp() {
             </div>
             <form>
               <label>Name :</label>
-              <input
-                type="text"
-                onChange={(e) => setUsername(e.target.value)}
-              />
+              <input type="text" {...register("username")} />
               <label>Username :</label>
-              <input
-                type="mail"
-                onChange={(e) => setUserEmail(e.target.value)}
-              />
+              <input type="mail" {...register("email")} />
               <div className={"errPass " + (isemptyPass ? "empty-active" : "")}>
                 Password must be equal
               </div>
@@ -81,23 +75,16 @@ function UserSignUp() {
                 Enter Password
               </div>
               <label>Password :</label>
-              <input
-                type="password"
-                onChange={(e) => setUserPass(e.target.value)}
-              />
+              <input type="password" {...register("password")} />
               <label>Confirm Password :</label>
-              <input
-                type="password"
-                onChange={(e) => setUserConfPass(e.target.value)}
-              />
-
+              <input type="password" {...register("confirmPassword")} />
+              {error && <p className="register-error-message">{error}</p>}
               <div className="userSign-btn">
                 <span onClick={() => UserSignin()}>Sign Up</span>
               </div>
             </form>
           </div>
           <div className="already-have-ac" onClick={() => history(-1)}>
-            {" "}
             already has an account ?
           </div>
         </div>

@@ -14,7 +14,7 @@ function AdmineProduct() {
                   style={({ isActive }) => {
                     return isActive ? { color: "black" } : {};
                   }}
-                  to={"Men"}
+                  to={"men"}
                 >
                   Men
                 </NavLink>{" "}
@@ -24,7 +24,7 @@ function AdmineProduct() {
                   style={({ isActive }) => {
                     return isActive ? { color: "black" } : {};
                   }}
-                  to={"Women"}
+                  to={"women"}
                 >
                   Women
                 </NavLink>

@@ -10,7 +10,7 @@ function AdmineCards({ image, name, number, amount, removeItem }) {
         <div className="card-cancel" onClick={() => removeItem(number)}>
           ❌
         </div>
-        <NavLink to={"browse/" + number}>
+        <NavLink to={`browse/${number}`}>
           <div className="admine-card-top">
             <img alt="" src={image} />
             <div className="quick-view">Quick View</div>

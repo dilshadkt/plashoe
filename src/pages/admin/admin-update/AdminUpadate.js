@@ -1,53 +1,79 @@
-import React, { useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../../style/adminUpdate.css";
-
 import { useParams } from "react-router-dom";
 // import { shopcardData } from "../../../asset/data/shopCard/ShopData";
 import EditIcon from "@mui/icons-material/Edit";
-import MyContext from "../../../components/Mycontext/Mycontext";
+// import MyContext from "../../../components/Mycontext/Mycontext";
+import axios from "axios";
 
 function AdminUpadate() {
   const cardId = useParams();
-  ///////////////// context value ///////////////
-  const { orgData, setOrgData } = useContext(MyContext);
 
-  const filter = orgData.filter((item) => item.id === Number(cardId.id));
-  const [shoeName, setShoeName] = useState(filter[0].name);
-  const [shoeAmount, setShoeAmount] = useState(filter[0].amount);
-  const [shoeCategory, setShoeCategory] = useState(filter[0].categorie);
+  const [shoe, setShoe] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/admine/products/${cardId.id}`)
+      .then((res) => setShoe(res.data.data));
+  }, [cardId.id]);
+  useEffect(() => {
+    setShoeName(shoe.title);
+    setShoeAmount(shoe.price);
+    setShoeCategory(shoe.category);
+  }, [shoe]);
+  ///////////////// context value⬇️⬇️⬆️⬆️ ///////////////
+  // const { orgData, setOrgData } = useContext(MyContext);
+
+  // const filter = orgData.filter((item) => item.id === 1);
+  const [shoeName, setShoeName] = useState("");
+  const [shoeAmount, setShoeAmount] = useState("");
+  const [shoeCategory, setShoeCategory] = useState("");
   const [isEdit, setIsEdit] = useState(true);
 
+  ////////////////// ediy function  👩‍🔧👨‍🔧////////
   function confirmChange() {
+    console.log(shoeCategory);
+    const data = {
+      title: shoeName,
+      price: shoeAmount,
+      category: shoeCategory,
+    };
+    axios
+      .put(`http://localhost:8080/admine/products/${cardId.id}`, data)
+      .then((res) => console.log(res));
     // setcurrentData((prev) => ({
     //   ...prev,
     //   name: shoeName,
     //   amount: shoeAmount,
     //   categorie: shoeCategory,
     // }));
-
-    const updatedItem = orgData.map((item) =>
-      item.id === Number(cardId.id)
-        ? {
-            ...item,
-            name: shoeName,
-            amount: shoeAmount,
-            categorie: shoeCategory,
-          }
-        : item
-    );
-    setOrgData(updatedItem);
-    setIsEdit(true);
+    // const updatedItem = orgData.map((item) =>
+    //   item.id === Number(cardId.id)
+    //     ? {
+    //         ...item,
+    //         name: shoeName,
+    //         amount: shoeAmount,
+    //         categorie: shoeCategory,
+    //       }
+    //     : item
+    // );
+    // setOrgData(updatedItem);
+    // setIsEdit(true);
   }
   function handleSelection(event) {
     setShoeCategory(event.target.value);
   }
 
-  return (
+  return shoe === "" ? (
+    <>
+      <div>shimmer</div>
+    </>
+  ) : (
     <>
       <div className="admine-update">
         <div className="admine-update-content">
           <div className="admine-update-parts">
-            <img alt="" src={filter[0].image} />
+            <img alt="" src={shoe.image} />
           </div>
           <div className="admine-update-parts upadate-right">
             <form className={!isEdit ? "form-active" : ""}>
@@ -74,8 +100,8 @@ function AdminUpadate() {
                 disabled={isEdit ? true : false}
                 onChange={handleSelection}
               >
-                <option value={"Men"}>Men</option>
-                <option value={"Women"}>Women</option>
+                <option value={"men"}>Men</option>
+                <option value={"women"}>Women</option>
               </select>
               {!isEdit ? (
                 <span className="confirm-btn" onClick={() => confirmChange()}>

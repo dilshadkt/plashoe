@@ -3,18 +3,31 @@ import PersonIcon from "@mui/icons-material/Person";
 import "../../../style/navabar.css";
 import Cart from "../../../components/cart/Cart";
 import { Link, NavLink } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import MyContext from "../../../components/Mycontext/Mycontext";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LoginIcon from "@mui/icons-material/Login";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import More from "../More/More";
+import instance from "../../../axios/AxiosInstance";
 
 const Navbar = () => {
+  const userId = localStorage.getItem("userId");
+  const user = localStorage.getItem("user");
   const [islogOpen, setIsLogOpen] = useState(false);
   const [isopenMore, setIsOpenMore] = useState(false);
 
-  const { setCartOpen, cartdata, isLogin, currentUser } = useContext(MyContext);
+  const { setCartOpen, cartdata, isLogin, cartOpen, isbtnClick, currentUser } =
+    useContext(MyContext);
+  const [cartCount, setCartCount] = useState("");
+  useEffect(() => {
+    instance
+      .get(`/user/me`)
+      .then((res) => {
+        setCartCount(res.data.cart.length);
+      })
+      .catch((err) => console.log(err));
+  }, [cartOpen, isbtnClick]);
 
   return (
     <>
@@ -45,7 +58,7 @@ const Navbar = () => {
                   style={({ isActive }) => {
                     return isActive ? { color: "black" } : {};
                   }}
-                  to={"product-category/Men"}
+                  to={"product-category/men"}
                 >
                   MEN
                 </NavLink>
@@ -55,7 +68,7 @@ const Navbar = () => {
                   style={({ isActive }) => {
                     return isActive ? { color: "black" } : {};
                   }}
-                  to={"product-category/Women"}
+                  to={"product-category/women"}
                 >
                   WOMEN
                 </NavLink>
@@ -97,16 +110,14 @@ const Navbar = () => {
               <li>OUR STORY</li>
               <li>CONTACT</li>
             </ul>
-            {isLogin ? (
+            {isLogin && (
               <div
                 className="nav-cart-cout-shower-container"
                 onClick={() => setCartOpen(true)}
               >
-                <div className="nav-cart-cout-shower">{cartdata.length}</div>
+                <div className="nav-cart-cout-shower">{cartCount}</div>
                 <LocalMallIcon />
               </div>
-            ) : (
-              ""
             )}
             <div
               className="nav-cart-user-log-icon"
@@ -115,15 +126,22 @@ const Navbar = () => {
               <PersonIcon />
 
               <div
+                onMouseLeave={() => setIsLogOpen(false)}
                 className={
                   "user-log-details " + (islogOpen && "user-log-active")
                 }
               >
-                <div>{currentUser}</div>
+                <div>{currentUser ? currentUser.username : "user"}</div>
                 {isLogin ? (
                   <div className="user-log-out-btn">
                     <span>Log Out</span>
-                    <div className="user-log-btn-icon">
+                    <div
+                      className="user-log-btn-icon"
+                      onClick={() => (
+                        localStorage.setItem("user", ""),
+                        localStorage.setItem("userId", "")
+                      )}
+                    >
                       <Link to={"login"}>
                         <LogoutIcon />
                       </Link>

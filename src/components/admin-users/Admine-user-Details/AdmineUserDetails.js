@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../../style/admiUserDeatils.css";
-import { useContext } from "react";
-import MyContext from "../../Mycontext/Mycontext";
+// import { useContext } from "react";
+// import MyContext from "../../Mycontext/Mycontext";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 function AdmineUserDetails() {
-  const userId = useParams();
-  const { UserData } = useContext(MyContext);
-  const filteredUser = UserData.filter(
-    (item) => item.id === Number(userId.userId)
-  );
+  const { userId } = useParams();
+  const [UserData, setUserData] = useState([]);
 
-  return (
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/admine/user/${userId}`)
+      .then((res) => setUserData(res.data.data));
+  }, [userId]);
+
+  // const filteredUser = UserData.filter((item) => item.id === Number(userId));
+
+  return UserData === "" ? (
+    <>
+      <div>shimmer</div>
+    </>
+  ) : (
     <>
       <div className="adminUser-details-content">
         <div className="user-detail-content">
@@ -26,11 +36,11 @@ function AdmineUserDetails() {
           <div className="userDetails-form">
             <form>
               <label>Full Name :</label>
-              <input type="text" value={filteredUser[0].name} disabled />
+              <input type="text" value={UserData.username} disabled />
               <label>Address :</label>
-              <input type="text" value={filteredUser[0].address} disabled />
+              <input type="text" value={UserData.email} disabled />
               <label>Mobile :</label>
-              <input type="number" value={filteredUser[0].mobile} disabled />
+              <input type="number" value={UserData.password} disabled />
             </form>
           </div>
           <hr />
@@ -38,13 +48,13 @@ function AdmineUserDetails() {
           <div className="admin-user-order-details">
             <span>Order :</span>
             <div className="user-order-list">
-              <p>{filteredUser[0].order}</p>
-              <p>{filteredUser[0].quantity}</p>
+              <p>{UserData.username}</p>
+              <p>{UserData.username}</p>
             </div>
 
             <div className="user-order-total">
               <p>Total :</p>
-              <h4>${filteredUser[0].total}</h4>
+              <h4>${UserData.username}</h4>
             </div>
           </div>
         </div>

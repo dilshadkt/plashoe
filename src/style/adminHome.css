@@ -47,6 +47,7 @@
 }
 .admin-users-content {
   height: 560px;
+  overflow-y: scroll;
   background-color: white;
   margin: 0px 60px;
   margin-bottom: 50px;

@@ -22,23 +22,25 @@ import AddNewHome from "../admin/addNew/AddNewHome";
 import AdmineAll from "../admin/adminAllcategry/AdmineAll";
 import UserSignUp from "../auth/user Sign/UserSignUp";
 import AdmineUserDetails from "../../components/admin-users/Admine-user-Details/AdmineUserDetails";
-import { UserData } from "../../asset/data/userData/Userdata";
+// import { UserData } from "../../asset/data/userData/Userdata";
 import AdminLog from "../admin/adminLog/AdminLog";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { userLogInstance } from "../../axios/AxiosInstance";
 
 const Home = () => {
   const location = useLocation();
   const navigator = useNavigate();
   const [orgData, setOrgData] = useState(shopcardData);
   const [cartOpen, setCartOpen] = useState(false);
+  const [isbtnClick, setisBtnClick] = useState(false);
   const [shoeqauntiy, setShoeQauntity] = useState(1);
   const [cartdat, setCartData] = useState(CartedProduct);
   const [isLogin, setIsLogin] = useState(false);
-  const [currentUser, setCurrentUser] = useState("User");
+  const [currentUser, setCurrentUser] = useState(false);
   const [currentAdmin, setCurrentAdmin] = useState("");
-  const [userData, setUerData] = useState(UserData);
-
+  const [userData, setUerData] = useState("");
   const [issAdmineLogin, setIsAdmineLogin] = useState(false);
 
   /////////////////////// passing context 😒 /////////////////////
@@ -59,6 +61,8 @@ const Home = () => {
     currentAdmin: currentAdmin,
     setCurrentAdmin: setCurrentAdmin,
     setIsAdmineLogin: setIsAdmineLogin,
+    isbtnClick: isbtnClick,
+    setisBtnClick: setisBtnClick,
   };
 
   /////////////////////////////////////////////////////////////
@@ -68,6 +72,18 @@ const Home = () => {
       issAdmineLogin ? navigator("/admin") : navigator("/adminLog");
     }
   }, [location.pathname]);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    userLogInstance
+      .get("/me")
+      .then((res) => {
+        setCurrentUser(res.data);
+
+        setIsLogin(true);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <MyContext.Provider value={myName}>
@@ -98,7 +114,7 @@ const Home = () => {
           <Route path="product" element={<AdmineProduct />}>
             <Route index element={<AdmineAll />} />
             <Route path=":id" element={<AdmineCategory />} />
-            <Route path=":id" element={<AdmineCategory />} />
+            {/* <Route path=":id" element={<AdmineCategory />} /> */}
             <Route path="add" element={<AddNewPrdct />} />
             <Route path="add/new" element={<AddNewHome />} />
             <Route path=":id/browse/:id" element={<AdminUpadate />} />

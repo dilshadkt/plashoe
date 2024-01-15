@@ -2,7 +2,7 @@ import "../../style/homeContainer.css";
 import BestSeller from "../Home/best-seller/BestSeller";
 import HomeCardContainer from "../Home/home-card/HomeCardContainer";
 import StarRateRoundedIcon from "@mui/icons-material/StarRateRounded";
-// import HomeCard from "../Home/home-card/homeCard";
+
 const HomeContainer = () => {
   return (
     <>

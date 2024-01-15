@@ -107,6 +107,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.user-log-out-btn:hover {
+  color: black;
+}
 .user-log-details div {
   height: 50%;
 }
