@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../../../style/adminUpdate.css";
 import { useParams } from "react-router-dom";
-// import { shopcardData } from "../../../asset/data/shopCard/ShopData";
 import EditIcon from "@mui/icons-material/Edit";
-// import MyContext from "../../../components/Mycontext/Mycontext";
-import axios from "axios";
+import axios from "../../../config/AxiosConfig";
 
 function AdminUpadate() {
   const cardId = useParams();
@@ -13,7 +11,7 @@ function AdminUpadate() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/admine/products/${cardId.id}`)
+      .get(`/admine/products/${cardId.id}`)
       .then((res) => setShoe(res.data.data));
   }, [cardId.id]);
   useEffect(() => {
@@ -22,9 +20,7 @@ function AdminUpadate() {
     setShoeCategory(shoe.category);
   }, [shoe]);
   ///////////////// context value⬇️⬇️⬆️⬆️ ///////////////
-  // const { orgData, setOrgData } = useContext(MyContext);
 
-  // const filter = orgData.filter((item) => item.id === 1);
   const [shoeName, setShoeName] = useState("");
   const [shoeAmount, setShoeAmount] = useState("");
   const [shoeCategory, setShoeCategory] = useState("");
@@ -39,26 +35,8 @@ function AdminUpadate() {
       category: shoeCategory,
     };
     axios
-      .put(`http://localhost:8080/admine/products/${cardId.id}`, data)
+      .put(`/admine/products/${cardId.id}`, data)
       .then((res) => console.log(res));
-    // setcurrentData((prev) => ({
-    //   ...prev,
-    //   name: shoeName,
-    //   amount: shoeAmount,
-    //   categorie: shoeCategory,
-    // }));
-    // const updatedItem = orgData.map((item) =>
-    //   item.id === Number(cardId.id)
-    //     ? {
-    //         ...item,
-    //         name: shoeName,
-    //         amount: shoeAmount,
-    //         categorie: shoeCategory,
-    //       }
-    //     : item
-    // );
-    // setOrgData(updatedItem);
-    // setIsEdit(true);
   }
   function handleSelection(event) {
     setShoeCategory(event.target.value);
@@ -105,7 +83,6 @@ function AdminUpadate() {
               </select>
               {!isEdit ? (
                 <span className="confirm-btn" onClick={() => confirmChange()}>
-                  {" "}
                   Confirm
                 </span>
               ) : (

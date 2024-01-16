@@ -5,8 +5,7 @@ import ClearSharpIcon from "@mui/icons-material/ClearSharp";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import MyContext from "../Mycontext/Mycontext";
-import { userInstance } from "../../axios/AxiosInstance";
-
+import axios from "../../config/AxiosConfig";
 function Cart() {
   const { setCartOpen, cartOpen, setCartData, cartdata } =
     useContext(MyContext);
@@ -16,8 +15,8 @@ function Cart() {
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState("");
   useEffect(() => {
-    userInstance
-      .get(`/cart`)
+    axios
+      .get(`/users/cart`)
       .then((res) => setCart(res.data))
       .catch((err) => console.log(err));
   }, [cartOpen]);
@@ -37,11 +36,11 @@ function Cart() {
     setTotal(sum);
   }, [cart]);
 
-  async function removeItem(id) {
+  function removeItem(id) {
     const result = cartdata.filter((item) => item.id !== id);
     setCart(result);
-    await userInstance
-      .delete(`/cart?productId=${id}`)
+    axios
+      .delete(`/users/cart?productId=${id}`)
       .then((res) => setCart(res.data.cart))
       .catch((err) => console.log(err));
   }

@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../../style/admiUserDeatils.css";
-// import { useContext } from "react";
-// import MyContext from "../../Mycontext/Mycontext";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import axios from "../../../config/AxiosConfig";
 
 function AdmineUserDetails() {
   const { userId } = useParams();
@@ -11,11 +9,9 @@ function AdmineUserDetails() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/admine/user/${userId}`)
+      .get(`/admine/user/${userId}`)
       .then((res) => setUserData(res.data.data));
   }, [userId]);
-
-  // const filteredUser = UserData.filter((item) => item.id === Number(userId));
 
   return UserData === "" ? (
     <>

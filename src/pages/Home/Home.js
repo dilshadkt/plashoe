@@ -26,8 +26,7 @@ import AdmineUserDetails from "../../components/admin-users/Admine-user-Details/
 import AdminLog from "../admin/adminLog/AdminLog";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { userLogInstance } from "../../axios/AxiosInstance";
+import axios from "../../config/AxiosConfig";
 
 const Home = () => {
   const location = useLocation();
@@ -71,12 +70,10 @@ const Home = () => {
     if (location.pathname === "/admin") {
       issAdmineLogin ? navigator("/admin") : navigator("/adminLog");
     }
-  }, [location.pathname]);
+  }, [location.pathname, issAdmineLogin, navigator]);
   useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    userLogInstance
-      .get("/me")
+    axios
+      .get("/user/me")
       .then((res) => {
         setCurrentUser(res.data);
 

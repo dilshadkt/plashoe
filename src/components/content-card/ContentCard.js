@@ -1,6 +1,6 @@
 import FormatListBulletedSharpIcon from "@mui/icons-material/FormatListBulletedSharp";
 import ViewStreamSharpIcon from "@mui/icons-material/ViewStreamSharp";
-import axios from "axios";
+import axios from "../../config/AxiosConfig";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../../style/contentCard.css";
@@ -13,7 +13,7 @@ function ContentCard() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:8080/admine/products?category=${
+        `/admine/products?category=${
           shophead.id === "Collection" ? "all" : shophead.id
         }`
       )

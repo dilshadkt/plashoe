@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
-// import { useContext } from "react";
-// import MyContext from "../../../components/Mycontext/Mycontext";
 import AdmineCards from "../../../components/adminCards/AdmineCards";
-import axios from "axios";
-import { admineProductInstance } from "../../../axios/AxiosInstance";
+import axios from "../../../config/AxiosConfig";
+
 function AdmineAll() {
   ////////////////// context 😍 //////////////
 
-  // const { orgData, setOrgData } = useContext(MyContext);
   const [shoes, setShoes] = useState([]);
   useEffect(() => {
-    console.log("hello");
-    admineProductInstance.get().then((res) => setShoes(res.data.data));
+    axios.get("/admine/products").then((res) => setShoes(res.data.data));
   }, []);
 
   ///////////////////////////////////////////////////
@@ -20,7 +16,7 @@ function AdmineAll() {
     const allfilter = shoes.filter((item) => item._id !== id);
     setShoes(allfilter);
     axios
-      .delete(`http://localhost:8080/admine/products?id=${id}`)
+      .delete(`/admine/products?id=${id}`)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   }

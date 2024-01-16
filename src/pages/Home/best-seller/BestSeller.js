@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../../style/bestseller.css";
-import { shopcardData } from "../../../asset/data/shopCard/ShopData";
 import ShoeCard from "../../../components/cards/ShoeCard";
+import axios from "../../../config/AxiosConfig";
 
 function BestSeller({ staus }) {
-  const data = shopcardData;
-  // const [data, setData] = useState(shopcardData);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`/admine/products?category=men`)
+      .then((res) => setData(res.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       <div className="shop-container">
@@ -18,16 +24,22 @@ function BestSeller({ staus }) {
             </div>
           </div>
           <div className="shop-cards">
-            {data.map((item) => (
-              <div className="shop-card-item" key={item.id}>
-                <ShoeCard
-                  image={item.image}
-                  name={item.name}
-                  number={item.id}
-                  amnt={item.amount}
-                />
-              </div>
-            ))}
+            {data.length !== 0 ? (
+              <>
+                {data.map((item) => (
+                  <div className="shop-card-item" key={item._id}>
+                    <ShoeCard
+                      image={item.image}
+                      name={item.title}
+                      number={item._id}
+                      amnt={item.price}
+                    />
+                  </div>
+                ))}
+              </>
+            ) : (
+              <>shimmer</>
+            )}
           </div>
         </div>
       </div>

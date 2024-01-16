@@ -3,23 +3,19 @@ import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 // import MyContext from "../Mycontext/Mycontext";
-import axios from "axios";
+import axios from "../../config/AxiosConfig";
 
 function AdminUsers() {
-  ////////////////// context 😍/////////////////
-  // const { UserData } = useContext(MyContext);
   const [UserDatas, setUserData] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8080/admine").then((res) => {
+    axios.get("/admine").then((res) => {
       setData(res.data.data);
       setUserData(res.data.data);
     });
   }, []);
 
-  ///////////////////////////////////////////////
-
   function removeItem(id) {
-    const result = filterdata.filter((item) => item.id !== id);
+    const result = filterdata.filter((item) => item._id !== id);
     setFilterdata(result);
   }
 
@@ -55,7 +51,7 @@ function AdminUsers() {
       </div>
 
       <div className="admin-users-content">
-        {filterdata.map((item, index) => (
+        {filterdata.map((item) => (
           <Fragment key={item._id}>
             <div className="admine-user-details">
               <div className="admine-user-box">

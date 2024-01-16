@@ -6,29 +6,27 @@ import CountButton from "../count-btn/CountButton";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import MyContext from "../Mycontext/Mycontext";
-
-import { productInstance, userInstance } from "../../axios/AxiosInstance";
-
+import axios from "../../config/AxiosConfig";
 function BrowsShoe({ qauntity, setQauntity, setCartData }) {
   const id = useParams();
   const [product, setProduct] = useState([]);
   const [relatedPrduct, setRelatedPrduct] = useState([]);
-
   useEffect(() => {
-    productInstance.get(`/${id.noid}`).then((res) => setProduct(res.data.data));
-  }, []);
+    axios
+      .get(`/admine/products/${id.noid}`)
+      .then((res) => setProduct(res.data.data));
+  }, [id.noid]);
   useEffect(() => {
-    productInstance
-      .get(`?category=${product.category}`)
+    axios
+      .get(`/admine/products?category=${product.category}`)
       .then((res) => setRelatedPrduct(res.data.data));
   }, [product]);
   const { isLogin, setisBtnClick, isbtnClick } = useContext(MyContext);
 
   function addtoCart() {
     const productId = id.noid;
-
-    userInstance
-      .post(`/cart`, {
+    axios
+      .post(`/users/cart`, {
         productId,
       })
       .then((res) => setisBtnClick(!isbtnClick))
@@ -121,7 +119,7 @@ function BrowsShoe({ qauntity, setQauntity, setCartData }) {
                     key={item._id}
                     name={item.title}
                     amount={item.price}
-                    number={item.id}
+                    number={item._id}
                   />
                 ))}
               </div>
